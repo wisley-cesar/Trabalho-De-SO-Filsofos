@@ -13,8 +13,11 @@ public class DiningPhilosophers {
         for (int i = 0; i < numPhilosophers; i++) {
             Object leftFork = forks[i];
             Object rightFork = forks[(i + 1) % numPhilosophers];
+            
+            // O último filósofo pega os garfos na ordem inversa
+            boolean reverseOrder = (i == numPhilosophers - 1);
 
-            philosophers[i] = new Philosopher(i, leftFork, rightFork);
+            philosophers[i] = new Philosopher(i, leftFork, rightFork, reverseOrder);
             philosophers[i].start();  // Inicia a Thread do filósofo
         }
     }
