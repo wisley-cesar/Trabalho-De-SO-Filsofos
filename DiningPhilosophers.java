@@ -17,5 +17,5 @@ public class DiningPhilosophers {
             philosophers[i] = new Philosopher(i, leftFork, rightFork);
             philosophers[i].start();  // Inicia a Thread do filósofo
         }
-    }
+    } 
 }
