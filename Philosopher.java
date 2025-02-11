@@ -5,12 +5,14 @@ class Philosopher extends Thread {
     private Object leftFork;
     private Object rightFork;
     private Semaphore table;
+    private int cycles; // Número de ciclos de comer/pensar
 
-    public Philosopher(int id, Object leftFork, Object rightFork, Semaphore table) {
+    public Philosopher(int id, Object leftFork, Object rightFork, Semaphore table, int cycles) {
         this.id = id;
         this.leftFork = leftFork;
         this.rightFork = rightFork;
         this.table = table;  // Semáforo para controlar quantos filósofos podem tentar pegar garfos
+        this.cycles = cycles; // Armazena o número de ciclos
     }
 
     private void think() throws InterruptedException {
@@ -26,7 +28,7 @@ class Philosopher extends Thread {
     @Override
     public void run() {
         try {
-            while (true) {
+            for (int i = 0; i < cycles; i++) {  // Limitar o número de ciclos
                 think();
 
                 table.acquire(); // Garante que no máximo 4 filósofos tentem pegar garfos
