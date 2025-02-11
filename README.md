@@ -46,5 +46,5 @@ O programa simula o jantar dos filósofos, demonstrando a alternância entre os 
 Esta implementação aborda um problema clássico de sincronização e concorrência, utilizando conceitos fundamentais de programação paralela para evitar problemas como deadlocks e starvation.
 
 ---
-📄 **PDF com este README e o link do vídeo serão enviados até 12/12.**
+
 
